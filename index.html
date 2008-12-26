@@ -1,0 +1,19 @@
+---
+layout: default
+title: Lucas Húngaro
+---
+
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  <h1>Open Source Projects</h1>
+  <ul class="posts">
+    <li><a href="http://github.com/lucashungaro/reserved_attributes/">reserved_attributes:</a> Rails plugin that checks your ActiveRecord models for attributes with names that are reserved words in Ruby or Rails.</li>
+  </ul>
+</div>
+  
