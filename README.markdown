@@ -7,7 +7,7 @@ It is automatically transformed by [Jekyll](http://github.com/mojombo/jekyll) in
 The following directories and their contents are Copyright Lucas Húngaro. 
 You may not reuse anything therein without my permission:
 
-* _posts/
+* `_posts/`
 
 All other directories and files are MIT Licensed. 
 
