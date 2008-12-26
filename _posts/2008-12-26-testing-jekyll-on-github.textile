@@ -5,7 +5,7 @@ title: Testing Jekyll
 
 h1. {{ page.title }}
 
-p(meta). 26 Dez 2009 - Bauru/São Paulo - Brazil
+p(meta). 26 Dez 2008 - Bauru/São Paulo - Brazil
 
 h3. Code Learnings on GitHub
 
