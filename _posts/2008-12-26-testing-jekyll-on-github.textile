@@ -3,7 +3,7 @@ layout: post
 title: Testing Jekyll
 ---
 
-h1. {{ page.title }} - <a href="{{ post.url }}#disqus_thread">View Comments</a>
+h1. {{ page.title }} - <a href="http://lucashungaro.github.com/{{ post.url }}#disqus_thread">View Comments</a>
 
 p(meta). 26 Dez 2008 - Bauru/São Paulo - Brazil
 
