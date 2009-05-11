@@ -1,0 +1,18 @@
+---
+layout: post
+title: Ready. Set. GO!
+---
+
+h1. {{ page.title }} - <a href="http://lucashungaro.github.com{{ page.url }}#disqus_thread">View Comments</a>
+
+p(meta). 10 May 2009 - São Paulo, SP - Brazil
+
+Hello there! This is the first post of this blog.
+
+I've been blogging since 2007 in portuguese and now I think it's time to try to reach a wider public - the developers from all around the world. This will help to learn more from comments and criticism and also help to improve my communication ability in english.
+
+Sometimes I'll cross-post translated articles on my blogs, but there will be "exclusive" content on both of them too.
+
+I like many facets of software development - from agile methodologies and the human aspects of a knowledge based activity to frameworks and dynamic languages. My current main interest is TDD/BDD, so you'll be reading many articles concerning this practice if you chose to follow me along. Thank you and welcome!
+
+Ready. Set. GO!
