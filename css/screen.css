@@ -115,6 +115,7 @@ ul.posts {
     color: #aaa;
     text-decoration: none;
     margin-left: 1em;
+    float: right;
   }
 
   .site .title a.extra:hover {
@@ -151,6 +152,32 @@ ul.posts {
       .site .footer .rss img {
         border: 0;
       }
+
+.main_title {
+  font-size: 125%;
+  margin-bottom: 0.2em;
+  display: block;
+}
+
+.subtitle {
+  font-size: 90%;
+  margin-bottom: 0.2em;
+  color:#AAAAAA;
+}
+
+.banner {
+  margin-left: 490px;
+  position: absolute;
+}
+
+img.wwr {
+  border: 1px solid #ddd;
+}
+
+h1.oss {
+  margin-top: 5.5em;
+}
+
 
 /*****************************************************************************/
 /*
