@@ -107,18 +107,19 @@ ul.posts {
     text-decoration: none;
   }
 
-  .site .title a:hover {
+  .site .title a:hover, .site .banner a:hover {
     color: black;
   }
 
-  .site .title a.extra {
+  .site .banner a.extra {
     color: #aaa;
     text-decoration: none;
-    margin-left: 1em;
-    float: right;
+    margin-left: 2.2em;
+    margin-bottom: 0.5em;
+    display: block;
   }
 
-  .site .title a.extra:hover {
+  .site .banner a.extra:hover {
     color: black;
   }
 
@@ -175,7 +176,13 @@ img.wwr {
 }
 
 h1.oss {
-  margin-top: 5.5em;
+  margin-top: 7em;
+}
+
+div.search {
+  position: absolute;
+  margin-left: 490px;
+
 }
 
 
