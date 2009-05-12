@@ -117,6 +117,7 @@ ul.posts {
     margin-left: 2.2em;
     margin-bottom: 0.5em;
     display: block;
+    font-weight: bold;
   }
 
   .site .banner a.extra:hover {
