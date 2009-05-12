@@ -1,0 +1,195 @@
+---
+layout: post
+title: Tests should reveal code intent
+category: tdd
+---
+
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
+
+p(meta). 12 May 2009 - São Paulo, SP - Brazil
+
+This is nothing new to anyone - or, at least, it shouldn't be. However, it's much easier to say it than to do it for real.
+
+It's a really good thing that the testing mentality has spread around. This way many approaches to the practices of test driven development have been developed and improved. One good example are the testing frameworks. While they get more extensible and efficient by building cleaner beautiful DSLs, many people forget that, independently of the tool, of the syntax and of the technical approach being used, the intent of the written code is what really matters and has to be explicit.
+
+*Note*: throughout this article I'll use the expression "test driven development", but you can replace it with "behavior driven development" or with any similar approach.
+
+h2. What is code intention?
+
+The code intention has much to do with something that has been extensively discussed: the software behavior. A definition of behavior is "a system's observable response to stimulus". So we can say that what really matters is to verify if the observable response of a software component is the expected one, given one or more predefined stimulus.
+
+In some cases this means just to define a state, call some method and verify the result. In other cases, means to verify the effect propagation too (that's where mock objects are very useful). This depends on the component under development and on the approach you like the most.
+
+h2. How?
+
+The question is: how tests help me to reveal code intent?
+
+If you write a lot of confuse code and, after that, write some tests to validate this work, these tests won't help on that goal. But, if you use tests to drive your implementation process, you will discover the fundamental role that they play on creating code that is clear and easy to understand, extend and modify. With a scenario specification (the predefined state where the stimulus will occur), it's much easier to design and verify the necessary behavior.
+
+Usually, when writing tests before the implementation, you get other benefits like: good naming, simplicity and code that's easy to refactor. All of this thanks to the fact that, by practicing test driven development, you effectively think more about what you're writing before you do it.
+
+h2. Example
+
+I'll try to exemplify the steps to create a simple component with and without tests driving the implementation. This way, by the end, we'll have a better perspective of the effects of the process.
+
+So I want to write an application to catalog my movie collection. I need a class that represents the movie:
+
+{% highlight ruby %}
+class Movie
+  attr_accessor :title
+end
+{% endhighlight %}
+
+That's enough for this example.
+
+Now let's start the implementation of the class responsible by the management of the collection. First, no tests.
+
+I know I need a class that have a list of movies and allows me to add, remove, seek and list all the movies. So we have:
+
+{% highlight ruby %}
+class MovieShelf
+  attr_accessor :movies
+
+  def initialize
+    @movies = []
+  end
+
+  def lookup(movie)
+    @movies.detect {|m| m == movie}
+  end
+
+  def list
+    @movies.each do |movie|
+      puts movie.title
+    end
+  end
+end
+{% endhighlight %}
+
+Ok, that's simple and it's ready in two minutes. Let's use it (on irb):
+
+{% highlight irb %}
+>> shelf = MovieShelf.new
+=> #<MovieShelf:0x36eb88 @movies=[]>
+>> m = Movie.new
+=> #<Movie:0x33b328>
+>> m.title = "Juno"
+=> "Juno"
+>> m2 = Movie.new
+=> #<Movie:0x39968>
+>> m2.title = "Transformers"
+=> "Transformers"
+>> shelf.movies << m
+=> [#<Movie:0x33b328 @title="Juno">]
+>> shelf.movies << m2
+=> [#<Movie:0x33b328 @title="Juno">,
+    #<Movie:0x39968 @title="Transformers">]
+>> shelf.list
+Juno
+Transformers
+=> [#<Movie:0x33b328 @title="Juno">,
+    #<Movie:0x39968 @title="Transformers">]
+>> shelf.lookup m2
+=> #<Movie:0x39968 @title="Transformers">
+>> shelf.movies.delete m2
+=> #<Movie:0x39968 @title="Transformers">
+>> shelf.list
+Juno
+=> [#<Movie:0x33b328 @title="Juno">]
+{% endhighlight %}
+
+It works and meets our requirements. But, the code isn't consistent. The movie collection (in practice, an instance of Array) is exposed and can be manipulated directly. This can be especially bad if some method of MovieShelf do some additional actions while operating the collection (like some logging when adding/removing a movie), 'cause it won't happen when we manipulate the collection directly. The naming isn't very clear too, among other small issues. I also don't like the way I'm creating objects of the class Movie.
+
+Now, let's start with a bit of specification of what is needed. This way I'll have more time to think about good names and about a direct and clean way to use the code.
+
+{% highlight ruby %}
+context "a movie shelf" do
+  setup { @shelf = MovieShelf.new }
+
+  should "let the user store a movie" do
+    juno = Movie.new("Juno")
+    shelf.store juno
+    assert shelf.contains?(juno)
+  end
+end
+{% endhighlight %}
+
+Just by establishing this first expectation regarding the behavior of this component, we have the idea of a initial implementation:
+
+{% highlight ruby %}
+class Movie
+  attr_accessor :title
+
+  def initialize(title)
+    self.title = title
+  end
+end
+
+class MovieShelf
+  def initialize
+    @movies = []
+  end
+
+  def store(movie)
+    @movies << movie
+  end
+
+  def contains?(movie)
+    @movies.include? movie
+  end
+end
+{% endhighlight %}
+
+Continuing:
+
+{% highlight ruby %}
+context "a movie shelf" do
+  setup { @shelf = MovieShelf.new }
+
+  should "show how many movies are stored" do
+    juno = Movie.new("Juno")
+    transformers = Movie.new("Transformers")
+    shelf.store juno
+    shelf.store transformers
+    assert_equal 2, shelf.movies_count
+  end
+end
+{% endhighlight %}
+
+Implementing:
+
+{% highlight ruby %}
+class MovieShelf
+  def initialize
+    @movies = []
+  end
+
+  def store(movie)
+    @movies << movie
+  end
+
+  def contains?(movie)
+    @movies.include? movie
+  end
+
+  def movies_count
+    @movies.size
+  end
+end
+{% endhighlight %}
+
+Of course this is a contrived and somewhat "silly" example, but note how the interface is way better now and also how we discover new functionalities in the process. This is one of the main advantages you get with test driven development: rich interfaces through code that is modular, flexible and have clear intent.
+
+I won't go on with the coding avoid a huge article. I believe I managed to expose the importance of clear code intent and how tests can help we reach this goal and obtain clear code.
+
+What do you thing about this subject? Give your opinion, comment, example, criticism or suggestion. :)
+
+Read more:
+
+    "Test Driven Development: Programming by Intention":http://www.informit.com/articles/article.aspx?p=357688 <br/>
+
+    "The BDD cargo culting":http://blog.aslakhellesoy.com/2006/12/11/the-bdd-cargo-cult
+
+

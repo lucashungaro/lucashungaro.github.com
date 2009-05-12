@@ -1,9 +1,12 @@
 ---
 layout: post
 title: Ready. Set. GO!
+category: blog
 ---
 
-h1. {{ page.title }} - <a href="http://lucashungaro.github.com{{ page.url }}#disqus_thread">View Comments</a>
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
 
 p(meta). 10 May 2009 - São Paulo, SP - Brazil
 
