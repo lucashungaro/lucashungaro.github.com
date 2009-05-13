@@ -2,7 +2,6 @@
 layout: post
 title: Over-mocking, over-stubbing and avoiding over-stubbing with Mocha
 category: tdd
-published: false
 ---
 
 h1. {{ page.title }}
