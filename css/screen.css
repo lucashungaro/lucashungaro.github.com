@@ -70,6 +70,7 @@ table {
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
+  width: 80%;
 }
 
   ul.posts li {

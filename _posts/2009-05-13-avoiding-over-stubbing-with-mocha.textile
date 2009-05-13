@@ -1,0 +1,42 @@
+---
+layout: post
+title: Over-mocking, over-stubbing and avoiding over-stubbing with Mocha
+category: tdd
+published: false
+---
+
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
+
+p(meta). 13 May 2009 - São Paulo, SP - Brazil
+
+I'm not a "fan" of the way most of the developers community make use of mocks and stubs. In my humble opinion, it's a bad use of a very useful tool.
+
+With this kind of use some issues arise, like over-mocking and over-stubbing - the overuse of mocks and stubs. Over-mocking makes your tests brittle, which means that they fail when you change the code even if there are no change on the behavior of the component under verification. Over-stubbing makes your tests weak, which means they pass even if they're unsynchronized with the code, verifying behavior that isn't real anymore.
+
+Here's an example of over-mocking:
+
+<script src="http://gist.github.com/110797.js"></script>
+
+Note that even "setter" methods are under expectations here. If you make a simple change on the implementation and, for example, one of these methods aren't called anymore, even if you don't change the behavior, the test will fail. This will end up happening anyway when you use mocks (that's why you need integration tests), but you can diminish the bad consequences.
+
+Here's an example of over-stubbing:
+
+<script src="http://gist.github.com/110799.js"></script>
+
+With this approach you can end up with stubs of methods that no longer exists or even of objects that are no longer a dependency.
+
+If you use Mocha, you can configure it to help prevent over-stubbing through the class Configuration:
+
+<script src="http://gist.github.com/110802.js"></script>
+
+In the above examples, when Mocha finds an "improper" use of stubs, it will throw an exception of the type Mocha::StubbingError. This occurs 'cause we've made use of the method prevent. There are three levels of "protection":
+
+<script src="http://gist.github.com/110804.js"></script>
+
+Read more:
+
+    "Mocha::Configuration RDoc":http://mocha.rubyforge.org/classes/Mocha/Configuration.html <br/>
+
+    "Mocha Configuration - James Mead":http://blog.floehopper.org/articles/2009/02/09/mocha-configuration
