@@ -26,13 +26,15 @@ Here's an example of over-stubbing:
 
 With this approach you can end up with stubs of methods that no longer exists or even of objects that are no longer a dependency.
 
-If you use Mocha, you can configure it to help prevent over-stubbing through the class Configuration:
+The best way to avoid this issues is to learn from trying and studying but, if you use Mocha, you can configure it to help prevent over-stubbing through the class Configuration:
 
 <script src="http://gist.github.com/110802.js"></script>
 
 In the above examples, when Mocha finds an "improper" use of stubs, it will throw an exception of the type Mocha::StubbingError. This occurs 'cause we've made use of the method prevent. There are three levels of "protection":
 
 <script src="http://gist.github.com/110804.js"></script>
+
+*Note*: of course, you shouldn't use this as a solution for problems with over-stubbing. I think this feature is a good help for teams learning to do TDD or migration from a "isolationist" style to a more traditional one.
 
 Read more:
 
