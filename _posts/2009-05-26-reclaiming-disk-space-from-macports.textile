@@ -15,13 +15,13 @@ I use and like MacPorts for some software that have a too cumbersome/bugged comp
 A frequent complain about MacPorts is that it takes too much disk space (since it installs its own libraries instead of using the system ones). This is a valid concern and there's a way to mitigate it. MacPorts allows you to clear files used to build a port, namely work files, distribution files and archives. To remove all of them from all installed ports, execute the following command:
 
 {% highlight bash %}
-  sudo port clean --all all
+sudo port clean --all all
 {% endhighlight %}
 
 This will clean all kinds of file for all ports. The syntax is simple. Let's say you want to clear only work files from the port icu:
 
 {% highlight bash %}
-  sudo port clean --work icu
+sudo port clean --work icu
 {% endhighlight %}
 
 More information can be obtained on the port command man files.
@@ -29,7 +29,7 @@ More information can be obtained on the port command man files.
 Another thing you can do to reclaim some disk space is uninstall inactive ports:
 
 {% highlight bash %}
-  sudo port uninstall inactive
+sudo port uninstall inactive
 {% endhighlight %}
 
 These two commands worked very well for me, managing to reduce MacPorts directory (/opt/local/var/macports) size from 1.3 Gb to 730 Mb.
