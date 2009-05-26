@@ -1,0 +1,24 @@
+---
+layout: post
+title: Firefox add-ons that I use and recommend
+category: firefox
+published: false
+---
+
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
+
+p(meta). 23 May 2009 - São Paulo, SP - Brazil
+
+This is more to remember myself of all Firefox addons I use when I'm configuring a new machine from the ground up. Here's the list with the link to the add-on and a short description:
+
+* Firebug
+* YSlow
+* Firecookie
+* Web Developer Toolbar
+* Ubiquity
+* Speed Dial
+* Download Statusbar
+* TwitterFox
+* Locationbar
