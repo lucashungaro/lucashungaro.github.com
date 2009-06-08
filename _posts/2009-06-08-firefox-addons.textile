@@ -14,10 +14,10 @@ Even using just Macs I prefer Firefox to Safari (which I use through Fluid for s
 
 * "Firebug":https://addons.mozilla.org/en-US/firefox/addon/1843 - you know it, it's obligatory (Safari 4's developer tools are great too);
 * "YSlow":https://addons.mozilla.org/en-US/firefox/addon/5369 - brings to you Yahoo's performance guidelines for web pages;
-* "Page Speed":http://code.google.com/speed/page-speed/ - like YSlow, but from Google (a Firebug extension);
-* "Firecookie":https://addons.mozilla.org/en-US/firefox/addon/6683 - an extension to Firebug that allows you to view and manage cookies contents;
+* "Page Speed":http://code.google.com/speed/page-speed/ - a Firebug extension from Google similar to YSlow;
+* "Firecookie":https://addons.mozilla.org/en-US/firefox/addon/6683 - an extension to Firebug that allows you to view and manage cookie's contents;
 * "Web Developer Toolbar":https://addons.mozilla.org/en-US/firefox/addon/60 - a collection of nice tools for web development (like markup validation, browser window resizing, page elements manipulation and a lot of other tools);
-* "Ubiquity":https://addons.mozilla.org/en-US/firefox/addon/9527 - many describe it as "Spotlight":http://en.wikipedia.org/wiki/Spotlight_(software) for Firefox - I agree;
+* "Ubiquity":https://addons.mozilla.org/en-US/firefox/addon/9527 - many describe it as "Spotlight":http://is.gd/T4XW for Firefox - I agree;
 * "Wolfram Alpha Google":https://addons.mozilla.org/en-US/firefox/addon/12006 - integrates Google and Wolfram Alpha knowledge engine (really nice);
 * "Speed Dial":https://addons.mozilla.org/en-US/firefox/addon/4810 - enables direct access to your favorite websites through Firefox's start page;
 * "Download Statusbar":https://addons.mozilla.org/en-US/firefox/addon/26 - less intrusive download management (think Google Chrome);
