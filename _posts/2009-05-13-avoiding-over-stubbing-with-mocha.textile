@@ -34,7 +34,7 @@ In the above examples, when Mocha finds an "improper" use of stubs, it will thro
 
 <script src="http://gist.github.com/110804.js"></script>
 
-*Note*: of course, you shouldn't use this as a solution for problems with over-stubbing. I think this feature is a good help for teams learning to do TDD or migration from a "isolationist" style to a more traditional one.
+*Note*: of course, you shouldn't use this as a solution for problems with over-stubbing. I think this feature is a good help for teams learning to do TDD or migrating from a "isolationist" style to a more traditional one.
 
 Read more:
 
