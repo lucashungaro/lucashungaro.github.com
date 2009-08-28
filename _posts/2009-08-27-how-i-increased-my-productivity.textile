@@ -1,0 +1,41 @@
+---
+layout: post
+title: How I increased my productivity by eliminating distractions
+category: productivity
+---
+
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
+
+p(meta). 27 Aug 2009 - São Paulo, SP - Brazil
+
+(or: How I learned to stop worrying and unsubscribed from feeds)
+
+No, I'm still not a super-hyper-productive person, but here's how I managed to increase my productivity using some tricks (and the awesome operational system that is Mac OS X with some wonderful applications on top of it):
+
+* Don't check your e-mail more then four times a day: if you are expecting some important e-mail, ask the sender to alert you when he/she sends it - using something like an SMS;
+
+* Don't check your e-mails if you won't be able to act upon them immediately: an example is checking work e-mail on Friday afternoon, do it on the Monday;
+
+* Get rid of your feeds subscriptions: you won't miss something until you stay some time without it. If, after some days, you miss a feed, subscribe back to it, but don't check it more than once a day;
+
+* Let people be your filter: trust me, if something is really important (or banal, but  "hot") it will get to you, you don't have to dig for it. The Google Reader shared items feature is awesome in this point, and I'm on my way to start using only it, unsubscribing from every feed I currently subscribe to. If you need to find something, Google is your friend;
+
+* Disable unnecessary notifications: like the Growl ones or the "red counters" on app icons in the OS X Dock - keep only the ones that you really want to be notified about (for example, I keep the Propane one, as knowing what my co-workers are saying on Campfire is important);
+
+* Don't use a monitor that is too large: it may sound weird, but some "research":http://lifehacker.com/367391/do-larger-monitors-make-you-more-productive shows that after a size around 26-inch, user productivity starts to decrease. It's obvious: too much things in your visual field will distract you. Use Spaces and split screens by the kind of task you have to do (one for programming, one for internet browsing and so on);
+
+* Increase screen real estate and eliminate items from your desktop: configure Finder to don't show hard disks on the Desktop (I let only optical disks and removable devices appearing when connected). Eliminate from the Dock the apps you don't use very frequently. Use QuickSilver or something similar to reach the apps and files you don't use often, just don't let them pile up on your Dock or Desktop;
+
+* Eliminate fom the Menu Bar the items you don't need, like the Bluetooth status icon, the AM/PM indicator (it's ease to know that by looking outside your window), the Time Machine icon and so on;
+
+* Use "Adium":http://adium.im/ and configure it to be hidden unless it's the active application (see here: "active":http://yfrog.com/amactivep, "inactive":http://yfrog.com/ajinactive2p, "settings 1":http://yfrog.com/e3picture2fuap, "settings 2":http://yfrog.com/avpicture12xp);
+
+* Use "Fluid":http://fluidapp.com/ to create SSBs for the web applications you need to work: the reason behind this is to avoid having a "full" browser opened with a lot of tabs distracting you. With Fluid "apps" you can focus only on the task at hand;
+
+* Use "Tags":http://www.gravityapps.com/tags/ to ease the process of organizing and finding files.
+
+Some actions are really hard to take, like getting rid of your feed subscriptions - especially because nerds/geeks usually are bragging about how many feed subscriptions they have. It's plain stupidity, like competing to see who "stays up coding for more time and sleep less":http://37signals.com/svn/posts/1006-sleep-deprivation-is-not-a-badge-of-honor.
+
+Anyway, give it a try. You will miss the things you really need (I recommend trying for at least 10 days) and can get them back anytime you want.
