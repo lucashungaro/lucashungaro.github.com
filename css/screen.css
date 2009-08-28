@@ -236,3 +236,14 @@ div.search {
   #related h2 {
     margin-bottom: 1em;
   }
+
+div#post ul {
+  margin-bottom: 2em;
+  width: 90%;
+}
+
+  div#post ul li {
+    line-height: 1.75em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
