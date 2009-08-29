@@ -1,0 +1,39 @@
+---
+layout: post
+title: Rails Rumble 09 - the experience
+category: rails
+published: true
+---
+
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
+
+p(meta). 28 Aug 2009 - São Paulo, SP - Brazil
+
+Rails Rumble 2009 occurred this weekend and I have participated, together with "ArthurGeek":http://www.arthurgeek.net/ and "Nando Viera":http://simplesideias.com.br/, of team Awesome.
+
+Our application is called "TWT":http://twtapp.info and here is its original description:
+
+<blockquote>
+It's a Twitter web client that aims to provide a set of flexible filters so one can only receive tweets with real value, not random "mundane" ones that really drains time and attention.
+
+Among the filters we plan to do: mute (indefinitely and time based), by words (both "don't show tweets with these words" and "show only tweets with these words") and "valuable" tweets (i.e. only tweets that have been re-tweeted at least 3 times by friends).
+
+It will be also an API, so later on we can develop desktop and mobile clients
+</blockquote>
+
+Needless to say, there wasn't enough time to finish all that features, but the application is online with some basic ones (and some bugs too): "Twtapp":http://twtapp.info
+
+The weekend was fun and stressful. Here is the summary of the experience and some thoughts/tips:
+
+* Your app should be really small: seriously, *really* small. My advice is that the entire application shoulb be ready by the end of the first 24 hours. The second day should be spent polishing the application, bug fixing and "marketing" aspects: a product tour, standard static pages (about, feedback), 404 and 500 pages, a screencast and so on;
+* The team should be "physically together": remote work *will* hurt the team's overall productivity;
+* Brainstorm and define the entire application before the Rumble starts: do not let doubts to be discussed during the competition. The team should know clearly what each member should do and exactly how the application behaves before start developing any code;
+* Sleep;
+* Don't do last minute changes: please, don't write any Ruby code during the Rumble's last hour. You can fix css, static text and images, but don't code anything;
+* Limit test/specs to the application's core: do not spend time writing specs for boilerplate code. Write only the specs for the critical parts of the application. During the Rumble the team shouldn't try new things, just use things all members know and work with daily - this way you can let basic, well-know aspects, without specs;
+* Having a specialized web designer on the team will help as developers can focus the application core;
+* If a member decides to abandon the team hours before the competition starts, kill him/her. ;)
+
+We expect to continue to develop the application. Soon it will be the application we've planned and we'll let you know.
