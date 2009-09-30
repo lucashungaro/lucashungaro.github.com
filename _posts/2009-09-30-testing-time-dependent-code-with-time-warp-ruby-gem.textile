@@ -1,0 +1,40 @@
+---
+layout: post
+title: Testing time-dependent code with the time-warp Ruby gem
+category: tdd
+published: true
+---
+
+h1. {{ page.title }}
+
+<a href="#disqus_thread">View Comments</a>
+
+p(meta). 30 Sep 2009 - São Paulo, SP - Brazil
+
+The need to "manipulate time" is common when we're specifying code whose behavior depends on exact moments in time.
+
+A viable technique is to stub Ruby's Time class and manipulate it according to our needs. This works, but personally I have a gut feeling that says to me that whenever I'm doing this kind of thing on "system code", very bad things can happen. Specifically, stubbing or mocking "internal" classes may lead to obscure and hard to track bugs.
+
+Luckily, there is a neat Ruby gem called <a target="_blank" href="http://github.com/iridesco/time-warp/tree/master">time-warp</a>. It provides a layer over Ruby's time-related classes that allow us to control the clock inside a code block. Here's an example from our <a target="_blank" href="http://twtapp.info/">Rails Rumble application</a>:
+
+{% highlight ruby %}
+it "should only silence tweets with the desired word inside the configured time interval" do
+  pretend_now_is(Time.now.utc.beginning_of_day + 1.hour) do
+    tweet1.sent_at = 2.minutes.ago
+    tweet2.sent_at = 32.minutes.from_now
+    tweet3.sent_at = 1.hour.from_now
+
+    collection = [tweet1, tweet2, tweet3]
+
+    Silencer.apply(collection, {:word => "soccer", :until => 30.minutes.from_now})
+  end
+
+  tweet1.should be_filtered
+  tweet2.should be_filtered
+  tweet3.should_not be_filtered
+end
+{% endhighlight %}
+
+The gem adds the method pretend_now_is, that receives the desired time as a parameter and a block. Inside this block, all code executed "travels in time" to the defined moment. Besides being a more secure way of dealing with time classes, the code is way more elegant and readable.
+
+For more details, consult the <a target="_blank" href="http://github.com/iridesco/time-warp/blob/884623fec90687c7f3c28b8e8074a39c96946cbb/README.md">gem's README file</a>.
